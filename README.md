@@ -1,10 +1,7 @@
 # Simulation-input-files
 Simulation input files: Room-temperature DNA unwinding via terahertz modulation of biological water
-+--------------------------------------------------------------------+
-|                                                                    |
-|               Simulation File Description                          |
-|                                                                    |
-+--------------------------------------------------------------------+
+
+Simulation File Description                        
 
 Completion of this example requires:
 Gromacs software (https://www.gromacs.org/)
