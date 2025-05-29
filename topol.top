@@ -1,0 +1,49 @@
+;
+;	File 'topol.top' was generated
+;	By user: zhuz (512)
+;	On host: cu03
+;	At date: Mon May 13 15:53:11 2024
+
+;
+;	This is a standalone topology file
+;
+;	Created by:
+;	                 :-) GROMACS - gmx pdb2gmx, VERSION 5.1.4 (-:
+;	
+;	Executable:   /home/zhuz/software/gromacs_5/bin/gmx
+;	Data prefix:  /home/zhuz/software/gromacs_5
+;	Command line:
+;	  gmx pdb2gmx -f d12.pdb -o d12_processed.gro
+;	Force field was read from the standard GROMACS share directory.
+;
+
+; Include forcefield parameters
+#include "charmm27.ff/forcefield.itp"
+
+; Include chain topologies
+#include "topol_DNA_chain_A.itp"
+#include "topol_DNA_chain_B.itp"
+
+; Include water topology
+#include "charmm27.ff/spce.itp"
+
+#ifdef POSRES_WATER
+; Position restraint for each water oxygen
+[ position_restraints ]
+;  i funct       fcx        fcy        fcz
+   1    1       1000       1000       1000
+#endif
+
+; Include topology for ions
+#include "charmm27.ff/ions.itp"
+
+[ system ]
+; Name
+UNNAMED in water
+
+[ molecules ]
+; Compound        #mols
+DNA_chain_A         1
+DNA_chain_B         1
+SOL         9591
+NA               22
